@@ -1,150 +1,214 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Синий сайт</title>
+		<title>DriveSpeed — продажа автомобилей</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
-			/* Дополнительные синие стили */
+			/* Автомобильный стиль — тёмный фон, красные/оранжевые акценты, динамика */
 			body {
-				background: #060a1a;
-				color: #cce0ff;
+				background: #0a0a0a;
+				color: #dddddd;
+				font-family: 'Segoe UI', 'Arial', sans-serif;
 			}
 			h1, h2, h3, h4, h5, h6, strong, b {
-				color: #5588ff;
+				color: #ff6600;
+				font-weight: 700;
 			}
 			a {
-				color: #88aaff;
-				border-bottom-color: #5588ff;
+				color: #ff884d;
+				border-bottom-color: #ff6600;
+				text-decoration: none;
 			}
 			a:hover {
-				color: #aaccff;
+				color: #ffaa66;
 			}
 			.button {
-				background-color: #0a1a3a;
-				border-color: #3366ff;
-				color: #ffffff !important;
+				background-color: #1f1f1f;
+				border-color: #ff6600;
+				color: #ff6600 !important;
+				font-weight: bold;
+				transition: all 0.3s ease;
 			}
 			.button.primary {
-				background-color: #2266ff;
-				border-color: #5599ff;
-				color: #ffffff !important;
+				background-color: #ff6600;
+				border-color: #ff884d;
+				color: #0a0a0a !important;
+			}
+			.button.primary:hover {
+				background-color: #ff5500;
+				transform: scale(1.05);
 			}
 			.button:hover {
-				background-color: #2a55cc;
+				background-color: #2a2a2a;
+				transform: scale(1.05);
 			}
 			#header {
-				background: #030618;
-				border-bottom: 2px solid #2266ff;
+				background: #050505;
+				border-bottom: 3px solid #ff6600;
+				padding: 4em 0 2em 0;
+			}
+			#header h1 a {
+				color: #ff6600;
+				font-size: 3em;
+				letter-spacing: 4px;
 			}
 			.wrapper {
-				background: #050a1f;
-				border-top: 1px solid #3366ff;
+				background: #0f0f0f;
+				border-top: 1px solid #222;
 			}
 			.wrapper.style2 {
-				background: #0a102a;
+				background: #121212;
 			}
 			.icon.major {
-				color: #4488ff;
+				color: #ff6600;
 			}
 			.spotlight .content h3 {
-				color: #6699ff;
+				color: #ff884d;
+				font-size: 1.8em;
+			}
+			.spotlight .content p {
+				font-size: 1.1em;
+				line-height: 1.5;
 			}
 			#footer {
-				background: #030618;
-				border-top: 2px solid #2266ff;
+				background: #050505;
+				border-top: 2px solid #ff6600;
 			}
 			ul.icons li a {
-				color: #5588ff;
+				color: #ff6600;
+				font-size: 1.5em;
+				transition: 0.2s;
 			}
 			ul.icons li a:hover {
-				color: #88aaff;
+				color: #ffaa66;
+				transform: translateY(-3px);
 			}
 			.copyright {
-				color: #667799;
+				color: #666;
 			}
 			.phone .inner img {
-				border: 3px solid #2266ff;
+				border: 2px solid #ff6600;
+				border-radius: 20px;
+			}
+			/* Дополнительные авто-акценты */
+			.car-badge {
+				background: #ff6600;
+				color: #0a0a0a;
+				display: inline-block;
+				padding: 5px 12px;
+				border-radius: 20px;
+				font-size: 0.8em;
+				font-weight: bold;
+				margin-right: 8px;
+			}
+			.price {
+				font-size: 1.4em;
+				color: #ff884d;
+				font-weight: bold;
+			}
+			.special ul.icons li span {
+				font-weight: bold;
 			}
 		</style>
 	</head>
 	<body class="is-preload">
 
-		<!-- Шапка -->
+		<!-- Шапка с авто-слоганом -->
 			<header id="header">
 				<div class="content">
-					<h1><a href="#">СИНИЙ</a></h1>
-					<p>Простой, адаптивный одностраничный шаблон<br />
-					в стильном синем оформлении от <a href="http://html5up.net">HTML5 UP</a></p>
+					<h1><a href="#">DRIVESPEED</a></h1>
+					<p>Премиальные автомобили с пробегом<br />
+					<span style="color:#ff884d;">Полный привод | Спорт | Комфорт</span><br />
+					Проверка перед продажей | Кредит 0%</p>
 					<ul class="actions">
-						<li><a href="#" class="button primary icon solid fa-download">Скачать</a></li>
-						<li><a href="#one" class="button icon solid fa-chevron-down scrolly">Узнать больше</a></li>
+						<li><a href="#" class="button primary icon solid fa-download">Каталог авто</a></li>
+						<li><a href="#one" class="button icon solid fa-chevron-down scrolly">Подробнее</a></li>
 					</ul>
 				</div>
-				<div class="image phone"><div class="inner"><img src="images/screen.jpg" alt="" /></div></div>
+				<div class="image phone"><div class="inner"><img src="images/screen.jpg" alt="Спортивный автомобиль" /></div></div>
 			</header>
 
-		<!-- Раздел 1 -->
+		<!-- Преимущества автосалона -->
 			<section id="one" class="wrapper style2 special">
 				<header class="major">
-					<h2>Синий цвет — спокойствие, глубина и надёжность<br />
-					воплотите идеи в сиянии лазури</h2>
+					<h2>Почему выбирают нас?<br />
+					Надёжность, скорость, выгода</h2>
 				</header>
 				<ul class="icons major">
-					<li><span class="icon solid fa-camera-retro"><span class="label">Снимай</span></span></li>
-					<li><span class="icon solid fa-sync"><span class="label">Обрабатывай</span></span></li>
-					<li><span class="icon solid fa-cloud"><span class="label">Загружай</span></span></li>
+					<li><span class="icon solid fa-tachometer-alt"><span class="label">Скорость</span></span></li>
+					<li><span class="icon solid fa-shield-alt"><span class="label">Надёжность</span></span></li>
+					<li><span class="icon solid fa-hand-holding-usd"><span class="label">Выгода</span></span></li>
 				</ul>
 			</section>
 
-		<!-- Раздел 2 -->
+		<!-- Модели автомобилей -->
 			<section id="two" class="wrapper">
 				<div class="inner alt">
 					<section class="spotlight">
-						<div class="image"><img src="images/pic01.jpg" alt="" /></div>
+						<div class="image"><img src="images/pic01.jpg" alt="BMW X5" /></div>
 						<div class="content">
-							<h3>Синие горизонты</h3>
-							<p>Погрузитесь в мир безмятежности и технологий. Наш дизайн подарит ощущение свежести и уверенности. Синий — цвет мудрости и инноваций.</p>
+							<h3>BMW X5 2023</h3>
+							<p><span class="car-badge">3.0 л / 340 л.с.</span> <span class="car-badge">Полный привод</span><br />
+							Кожаный салон, панорамная крыша, адаптивный круиз-контроль. Пробег 15 000 км.<br />
+							<span class="price">от 4 990 000 ₽</span> — Кредит от 9.9%</p>
+							<ul class="actions">
+								<li><a href="#" class="button small">Тест-драйв</a></li>
+								<li><a href="#" class="button small primary">В кредит</a></li>
+							</ul>
 						</div>
 					</section>
 					<section class="spotlight">
-						<div class="image"><img src="images/pic02.jpg" alt="" /></div>
+						<div class="image"><img src="images/pic02.jpg" alt="Mercedes GLE" /></div>
 						<div class="content">
-							<h3>Лазурные акценты</h3>
-							<p>Каждая деталь создаёт атмосферу профессионализма. Синие кнопки, заголовки и рамки придают строгость и элегантность вашему проекту.</p>
+							<h3>Mercedes-Benz GLE 450</h3>
+							<p><span class="car-badge">3.0 л / 367 л.с.</span> <span class="car-badge">EQ Boost</span><br />
+							AirMatic пневмоподвеска, мультиконтурные сиденья, проекция. Пробег 8 000 км.<br />
+							<span class="price">от 6 490 000 ₽</span> — Trade-in возможен</p>
+							<ul class="actions">
+								<li><a href="#" class="button small">Тест-драйв</a></li>
+								<li><a href="#" class="button small primary">В кредит</a></li>
+							</ul>
 						</div>
 					</section>
 					<section class="spotlight">
-						<div class="image"><img src="images/pic03.jpg" alt="" /></div>
+						<div class="image"><img src="images/pic03.jpg" alt="Audi RS7" /></div>
 						<div class="content">
-							<h3>Морской стиль</h3>
-							<p>Гармония глубины и чистоты. Ваш контент будет выглядеть современно и привлекательно благодаря продуманной синей гамме.</p>
+							<h3>Audi RS7 Sportback</h3>
+							<p><span class="car-badge">4.0 л / 600 л.с.</span> <span class="car-badge">Quattro</span><br />
+							Спортивные сиденья, карбоновые вставки, керамические тормоза. Пробег 5 000 км.<br />
+							<span class="price">от 8 990 000 ₽</span> — Спецпредложение</p>
+							<ul class="actions">
+								<li><a href="#" class="button small">Тест-драйв</a></li>
+								<li><a href="#" class="button small primary">В кредит</a></li>
+							</ul>
 						</div>
 					</section>
 					<section class="special">
+						<h3 style="text-align:center; color:#ff884d;">Наши услуги</h3>
 						<ul class="icons labeled">
-							<li><span class="icon solid fa-camera-retro"><span class="label">Качественные фото</span></span></li>
-							<li><span class="icon solid fa-sync"><span class="label">Быстрая обработка</span></span></li>
-							<li><span class="icon solid fa-cloud"><span class="label">Облачные сервисы</span></span></li>
-							<li><span class="icon solid fa-code"><span class="label">Чистый код</span></span></li>
-							<li><span class="icon solid fa-desktop"><span class="label">Адаптивный дизайн</span></span></li>
+							<li><span class="icon solid fa-key"><span class="label">Обмен авто (Trade-in)</span></span></li>
+							<li><span class="icon solid fa-file-invoice-dollar"><span class="label">Кредит и рассрочка</span></span></li>
+							<li><span class="icon solid fa-shield-alt"><span class="label">Полная проверка истории</span></span></li>
+							<li><span class="icon solid fa-wrench"><span class="label">Гарантия 1 год</span></span></li>
+							<li><span class="icon solid fa-truck"><span class="label">Доставка по региону</span></span></li>
 						</ul>
 					</section>
 				</div>
 			</section>
 
-		<!-- Раздел 3 -->
+		<!-- Спецпредложение -->
 			<section id="three" class="wrapper style2 special">
 				<header class="major">
-					<h2>Синий — больше чем цвет</h2>
-					<p>Это спокойствие, доверие и бесконечность. Сделайте ваш проект стильным и современным.<br />
-					Присоединяйтесь к тем, кто выбирает уверенность.</p>
+					<h2>Скидка до 300 000 ₽ на первые 3 авто</h2>
+					<p>При заказе через сайт — бесплатное ТО на 2 года<br />
+					и подарок: шины на выбор</p>
 				</header>
 				<ul class="actions special">
-					<li><a href="#" class="button primary icon solid fa-download">Скачать</a></li>
-					<li><a href="#" class="button">Подробнее</a></li>
+					<li><a href="#" class="button primary icon solid fa-download">Заказать звонок</a></li>
+					<li><a href="#" class="button">Стать партнёром</a></li>
 				</ul>
 			</section>
 
@@ -154,8 +218,9 @@
 					<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
 					<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 					<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
 				</ul>
-				<p class="copyright">&copy; Синий сайт. Дизайн: <a href="http://html5up.net">HTML5 UP</a></p>
+				<p class="copyright">&copy; DriveSpeed. Все авто проверены. <a href="http://html5up.net">HTML5 UP</a></p>
 			</footer>
 
 		<!-- Скрипты -->
