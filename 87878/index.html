@@ -1,431 +1,400 @@
-<!Scathachsimp HTML>
-<!--
-	Fractal by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+<!DOCTYPE html>
 <html>
-	<head>
-		<title>Fractal by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+ <head>
+  <title>DriveSpeed — Каталог автомобилей</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <style>
+   /* Автомобильный стиль — тёмный фон, красные/оранжевые акценты */
+   body {
+    background: #0a0a0a;
+    color: #dddddd;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+   }
+   h1, h2, h3, h4, h5, h6, strong, b {
+    color: #ff6600;
+    font-weight: 700;
+   }
+   a {
+    color: #ff884d;
+    border-bottom-color: #ff6600;
+    text-decoration: none;
+   }
+   a:hover {
+    color: #ffaa66;
+   }
+   .button {
+    background-color: #1f1f1f;
+    border-color: #ff6600;
+    color: #ff6600 !important;
+    font-weight: bold;
+    transition: all 0.3s ease;
+   }
+   .button.primary {
+    background-color: #ff6600;
+    border-color: #ff884d;
+    color: #0a0a0a !important;
+   }
+   .button.primary:hover {
+    background-color: #ff5500;
+    transform: scale(1.05);
+   }
+   .button:hover {
+    background-color: #2a2a2a;
+    transform: scale(1.05);
+   }
+   #header {
+    background: #050505;
+    border-bottom: 3px solid #ff6600;
+    padding: 4em 0 2em 0;
+   }
+   #header h1 a {
+    color: #ff6600;
+    font-size: 3em;
+    letter-spacing: 4px;
+   }
+   .wrapper {
+    background: #0f0f0f;
+    border-top: 1px solid #222;
+   }
+   .wrapper.style2 {
+    background: #121212;
+   }
+   .icon.major {
+    color: #ff6600;
+   }
+   /* Стили для каталога — сетка карточек */
+   .catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+   }
+   .car-card {
+    background: #1a1a1a;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #333;
+   }
+   .car-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255,102,0,0.2);
+    border-color: #ff6600;
+   }
+   .car-card .image {
+    width: 100%;
+    height: 200px;
+    background: #2a2a2a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ff6600;
+    font-size: 3rem;
+   }
+   .car-card .card-content {
+    padding: 1.5rem;
+   }
+   .car-card h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.4rem;
+   }
+   .car-badge {
+    background: #ff6600;
+    color: #0a0a0a;
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    margin-right: 6px;
+    margin-bottom: 8px;
+   }
+   .price {
+    font-size: 1.3rem;
+    color: #ff884d;
+    font-weight: bold;
+    margin: 10px 0;
+   }
+   .card-actions {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1rem;
+   }
+   .card-actions .button.small {
+    flex: 1;
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 0.6rem 0;
+   }
+   /* Контакты */
+   .contacts-bar {
+    background: #1a1a1a;
+    padding: 1.5rem;
+    text-align: center;
+    border-radius: 12px;
+    margin: 2rem 0;
+    border: 1px solid #ff6600;
+   }
+   .contacts-bar h3 {
+    margin-bottom: 1rem;
+   }
+   .contact-item {
+    display: inline-block;
+    margin: 0 1.5rem;
+    font-size: 1.1rem;
+   }
+   .contact-item i {
+    margin-right: 8px;
+    color: #ff6600;
+   }
+   .contact-item a {
+    color: #ffaa66;
+    border-bottom: none;
+   }
+   .contact-item a:hover {
+    color: #ffcc88;
+   }
+   .spotlight .content h3 {
+    color: #ff884d;
+    font-size: 1.8rem;
+   }
+   #footer {
+    background: #050505;
+    border-top: 2px solid #ff6600;
+   }
+   ul.icons li a {
+    color: #ff6600;
+    font-size: 1.5rem;
+    transition: 0.2s;
+   }
+   ul.icons li a:hover {
+    color: #ffaa66;
+    transform: translateY(-3px);
+   }
+   .copyright {
+    color: #666;
+   }
+   .phone .inner img {
+    border: 2px solid #ff6600;
+    border-radius: 20px;
+   }
+   .special ul.icons li span {
+    font-weight: bold;
+   }
+   max-width: 768px {
+    .c
 
-		<!-- Header -->
-			<header id="header">
-				<div class="content">
-					<h1><a href="#">Fractal</a></h1>
-					<p>Just a simple, single page responsive<br />
-					template brought to you by <a href="http://html5up.net">HTML5 UP</a></p>
-					<ul class="actions">
-						<li><a href="#" class="button primary icon solid fa-download">Download</a></li>
-						<li><a href="#one" class="button icon solid fa-chevron-down scrolly">Learn More</a></li>
-					</ul>
-				</div>
-				<div class="image phone"><div class="inner"><img src="images/screen.jpg" alt="" /></div></div>
-			</header>
 
-		<!-- One -->
-			<section id="one" class="wrapper style2 special">
-				<header class="major">
-					<h2>Sed ipsum magna lorem tempus amet<br />
-					vehicula et gravida elementum</h2>
-				</header>
-				<ul class="icons major">
-					<li><span class="icon solid fa-camera-retro"><span class="label">Shoot</span></span></li>
-					<li><span class="icon solid fa-sync"><span class="label">Process</span></span></li>
-					<li><span class="icon solid fa-cloud"><span class="label">Upload</span></span></li>
-				</ul>
-			</section>
+ontact-item {
+     display: block;
+     margin: 0.8rem 0;
+    }
+   }
+  </style>
+ </head>
+ <body class="is-preload">
 
-		<!-- Two -->
-			<section id="two" class="wrapper">
-				<div class="inner alt">
-					<section class="spotlight">
-						<div class="image"><img src="images/pic01.jpg" alt="" /></div>
-						<div class="content">
-							<h3>Magna sed ultrices</h3>
-							<p>Morbi mattis ornare ornare. Duis quam turpis, gravida at leo elementum elit fusce accumsan dui libero, quis vehicula lectus ultricies eu. In convallis amet leo non sapien iaculis efficitur consequat lorem ipsum.</p>
-						</div>
-					</section>
-					<section class="spotlight">
-						<div class="image"><img src="images/pic02.jpg" alt="" /></div>
-						<div class="content">
-							<h3>Ultrices nullam aliquam</h3>
-							<p>Morbi mattis ornare ornare. Duis quam turpis, gravida at leo elementum elit fusce accumsan dui libero, quis vehicula lectus ultricies eu. In convallis amet leo non sapien iaculis efficitur consequat lorem ipsum.</p>
-						</div>
-					</section>
-					<section class="spotlight">
-						<div class="image"><img src="images/pic03.jpg" alt="" /></div>
-						<div class="content">
-							<h3>Aliquam sed magna</h3>
-							<p>Morbi mattis ornare ornare. Duis quam turpis, gravida at leo elementum elit fusce accumsan dui libero, quis vehicula lectus ultricies eu. In convallis amet leo non sapien iaculis efficitur consequat lorem ipsum.</p>
-						</div>
-					</section>
-					<section class="special">
-						<ul class="icons labeled">
-							<li><span class="icon solid fa-camera-retro"><span class="label">Ipsum lorem accumsan</span></span></li>
-							<li><span class="icon solid fa-sync"><span class="label">Sed vehicula elementum</span></span></li>
-							<li><span class="icon solid fa-cloud"><span class="label">Elit fusce consequat</span></span></li>
-							<li><span class="icon solid fa-code"><span class="label">Lorem nullam tempus</span></span></li>
-							<li><span class="icon solid fa-desktop"><span class="label">Adipiscing amet sapien</span></span></li>
-						</ul>
-					</section>
-				</div>
-			</section>
+  <!-- Шапка -->
+   <header id="header">
+    <div class="content">
+     <h1><a href="#">DRIVESPEED</a></h1>
+     <p>Премиальные автомобили с пробегом
 
-		<!-- Three -->
-			<section id="three" class="wrapper style2 special">
-				<header class="major">
-					<h2>Magna leo sapien gravida</h2>
-					<p>Gravida at leo elementum elit fusce accumsan dui libero, quis vehicula<br />
-					lectus ultricies eu. In convallis amet leo sapien iaculis efficitur.</p>
-				</header>
-				<ul class="actions special">
-					<li><a href="#" class="button primary icon solid fa-download">Download</a></li>
-					<li><a href="#" class="button">Learn More</a></li>
-				</ul>
-			</section>
+     <span style="color:#ff884d;">Полный привод | Спорт | Комфорт</span>
 
-		<!-- Four -->
-		<!--
-			<section id="four" class="wrapper">
-				<div class="inner">
+     Проверка перед продажей | Кредит 0%</p>
+     <ul class="actions">
+      <li><a href="#catalog" class="button primary icon solid fa-car scrolly">Каталог авто</a></li>
+      <li><a href="#contacts" class="button icon solid fa-chevron-down scrolly">Контакты</a></li>
+     </ul>
+    </div>
+    <div class="image phone"><div class="inner"><img src="images/screen.jpg" alt="Спортивный автомобиль" /></div></div>
+   </header>
 
-					<header class="major">
-						<h2>Elements</h2>
-					</header>
+  <!-- Преимущества -->
+   <section id="one" class="wrapper style2 special">
+    <header class="major">
+     <h2>Почему выбирают нас?
 
-					<section>
-						<h4>Text</h4>
-						<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-						This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-						This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-						<hr />
-						<header>
-							<h4>Heading with a Subtitle</h4>
-							<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-						</header>
-						<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-						<header>
-							<h5>Heading with a Subtitle</h5>
-							<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-						</header>
-						<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-						<hr />
-						<h2>Heading Level 2</h2>
-						<h3>Heading Level 3</h3>
-						<h4>Heading Level 4</h4>
-						<h5>Heading Level 5</h5>
-						<h6>Heading Level 6</h6>
-						<hr />
-						<h5>Blockquote</h5>
-						<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-						<h5>Preformatted</h5>
-						<pre><code>i = 0;
+     Надёжность, скорость, выгода</h2>
+    </header>
+    <ul class="icons major">
+     <li><span class="icon solid fa-tachometer-alt"><span class="label">Скорость</span></span></li>
+     <li><span class="icon solid fa-shield-alt"><span class="label">Надёжность</span></span></li>
+     <li><span class="icon solid fa-hand-holding-usd"><span class="label">Выгода</span></span></li>
+    </ul>
+   </section>
 
-while (!deck.isInOrder()) {
-  print 'Iteration ' + i;
-  deck.shuffle();
-  i++;
-}
+  <!-- КАТАЛОГ автомобилей -->
+  <section id="catalog" class="wrapper">
+   <div class="inner">
+    <header class="major" style="text-align:center;">
+     <h2>Наш автопарк</h2>
+     <p>Выберите автомобиль своей мечты</p>
+    </header>
+    <div class="catalog-grid">
+     <!-- Карточка 1 -->
+     <div class="car-card">
+      <div class="image"><span>🏎️</span></div>
+      <div class="card-content">
+       <h3>BMW X5 2023</h3>
+       <span class="car-badge">3.0 л / 340 л.с.</span>
+       <span class="car-badge">Полный привод</span>
+       <p>Кожаный салон, панорамная крыша, адаптивный круиз-контроль. Пробег 15 000 км.</p>
+       <div class="price">4 990 000 ₽</div>
+       <div class="card-actions">
+        <a href="#" class="button small">Тест-драйв</a>
+        <a href="#" class="button small primary">В кредит</a>
+       </div>
+      </div>
+     </div>
+     <!-- Карточка 2 -->
+     <div class="car-card">
+      <div class="image"><span>⭐</span></div>
+      <div class="card-content">
+       <h3>Mercedes GLE 450</h3>
+       <span class="car-badge">3.0 л / 367 л.с.</span>
+       <span class="car-badge">EQ Boost</span>
+       <p>AirMatic пневмоподвеска, мультиконтурные сиденья, проекция. Пробег 8 000 км.</p>
+       <div class="price">6 490 000 ₽</div>
+       <div class="card-actions">
+        <a href="#" class="button small">Тест-драйв</a>
+        <a href="#" class="button small primary">В кредит</a>
+       </div>
+      </div>
+     </div>
+     <!-- Карточка 3 -->
+     <div class="car-card">
+      <div class="image"><span>🔥</span></div>
+      <div class="card-content">
+       <h3>Audi RS7 Sportback</h3>
+       <span class="car-badge">4.0 л / 600 л.с.</span>
+       <span class="car-badge">Quattro</span>
+       <p>Спортивные сиденья, карбоновые вставки, керамические тормоза. Пробег 5 000 км.</p>
+       <div class="price">8 990 000 ₽</div>
+       <div class="card-actions">
+        <a href="#" class="button small">Тест-драйв</a>
+        <a href="#" class="button small primary">В кредит</a>
+       </div>
+      </div>
+     </div>
+     <!-- Карточка 4 -->
+     <div class="car-card">
+      <div class="image"><span>🚘</span></div>
+      <div class="card-content">
+       <h3>Porsche Cayenne S</h3>
+       <span class="car-badge">2.9 л / 440 л.с.</span>
+       <span class="car-badge">Полный привод</span>
+       <p>Спортивные сиденья с памятью, адаптивные фары, BOSE. Пробег 12 000 км.</p>
+       <div class="price">7 490 000 ₽</div>
+       <div class="card-actions">
+        <a href="#" class="button small">Тест-драйв</a>
+        <a href="#" class="button small primary">В кредит</a>
+       </div>
+      </div>
+     </div>
+     <!-- Карточка 5 -->
+     <di
 
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-					</section>
 
-					<section>
-						<h4>Lists</h4>
-						<div class="row">
-							<div class="col-6 col-12-medium">
-								<h5>Unordered</h5>
-								<ul>
-									<li>Dolor pulvinar etiam.</li>
-									<li>Sagittis adipiscing.</li>
-									<li>Felis enim feugiat.</li>
-								</ul>
-								<h5>Alternate</h5>
-								<ul class="alt">
-									<li>Dolor pulvinar etiam.</li>
-									<li>Sagittis adipiscing.</li>
-									<li>Felis enim feugiat.</li>
-								</ul>
-							</div>
-							<div class="col-6 col-12-medium">
-								<h5>Ordered</h5>
-								<ol>
-									<li>Dolor pulvinar etiam.</li>
-									<li>Etiam vel felis viverra.</li>
-									<li>Felis enim feugiat.</li>
-									<li>Dolor pulvinar etiam.</li>
-									<li>Etiam vel felis lorem.</li>
-									<li>Felis enim et feugiat.</li>
-								</ol>
-								<h5>Icons</h5>
-								<ul class="icons">
-									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-								</ul>
-							</div>
-						</div>
-						<h5>Actions</h5>
-						<div class="row">
-							<div class="col-6 col-12-medium">
-								<ul class="actions">
-									<li><a href="#" class="button primary">Default</a></li>
-									<li><a href="#" class="button">Default</a></li>
-								</ul>
-								<ul class="actions small">
-									<li><a href="#" class="button primary small">Small</a></li>
-									<li><a href="#" class="button small">Small</a></li>
-								</ul>
-								<ul class="actions stacked">
-									<li><a href="#" class="button primary">Default</a></li>
-									<li><a href="#" class="button">Default</a></li>
-								</ul>
-								<ul class="actions stacked">
-									<li><a href="#" class="button primary small">Small</a></li>
-									<li><a href="#" class="button small">Small</a></li>
-								</ul>
-							</div>
-							<div class="col-6 col-12-medium">
-								<ul class="actions stacked">
-									<li><a href="#" class="button primary fit">Default</a></li>
-									<li><a href="#" class="button fit">Default</a></li>
-								</ul>
-								<ul class="actions stacked">
-									<li><a href="#" class="button primary small fit">Small</a></li>
-									<li><a href="#" class="button small fit">Small</a></li>
-								</ul>
-							</div>
-						</div>
-					</section>
+v class="car-card">
+      <div class="image"><span>⚡</span></div>
+      <div class="card-content">
+       <h3>Tesla Model S Plaid</h3>
+       <span class="car-badge">Электро / 1020 л.с.</span>
+       <span class="car-badge">Полный привод</span>
+       <p>Автопилот, 3 экрана, разгон до 100 за 2.1с. Пробег 20 000 км.</p>
+       <div class="price">7 990 000 ₽</div>
+       <div class="card-actions">
+        <a href="#" class="button small">Тест-драйв</a>
+        <a href="#" class="button small primary">В кредит</a>
+       </div>
+      </div>
+     </div>
+     <!-- Карточка 6 -->
+     <div class="car-card">
+      <div class="image"><span>🇯🇵</span></div>
+      <div class="card-content">
+       <h3>Lexus LX 600</h3>
+       <span class="car-badge">3.5 л / 409 л.с.</span>
+       <span class="car-badge">Рамный</span>
+       <p>Кожа полуанилин, массаж, Mark Levinson. Пробег 9 000 км.</p>
+       <div class="price">9 490 000 ₽</div>
+       <div class="card-actions">
+        <a href="#" class="button small">Тест-драйв</a>
+        <a href="#" class="button small primary">В кредит</a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
 
-					<section>
-						<h4>Table</h4>
-						<h5>Default</h5>
-						<div class="table-wrapper">
-							<table>
-								<thead>
-									<tr>
-										<th>Name</th>
-										<th>Description</th>
-										<th>Price</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Item One</td>
-										<td>Ante turpis integer aliquet porttitor.</td>
-										<td>29.99</td>
-									</tr>
-									<tr>
-										<td>Item Two</td>
-										<td>Vis ac commodo adipiscing arcu aliquet.</td>
-										<td>19.99</td>
-									</tr>
-									<tr>
-										<td>Item Three</td>
-										<td> Morbi faucibus arcu accumsan lorem.</td>
-										<td>29.99</td>
-									</tr>
-									<tr>
-										<td>Item Four</td>
-										<td>Vitae integer tempus condimentum.</td>
-										<td>19.99</td>
-									</tr>
-									<tr>
-										<td>Item Five</td>
-										<td>Ante turpis integer aliquet porttitor.</td>
-										<td>29.99</td>
-									</tr>
-								</tbody>
-								<tfoot>
-									<tr>
-										<td colspan="2"></td>
-										<td>100.00</td>
-									</tr>
-								</tfoot>
-							</table>
-						</div>
+  <!-- Услуги -->
+  <section class="wrapper style2 special">
+   <div class="inner">
+    <h3 style="color:#ff884d;">Наши услуги</h3>
+    <ul class="icons labeled" style="justify-content:center;">
+     <li><span class="icon solid fa-key"><span class="label">Обмен авто (Trade-in)</span></span></li>
+     <li><span class="icon solid fa-file-invoice-dollar"><span class="label">Кредит и рассрочка</span></span></li>
+     <li><span class="icon solid fa-shield-alt"><span class="label">Полная проверка истории</span></span></li>
+     <li><span class="icon solid fa-wrench"><span class="label">Гарантия 1 год</span></span></li>
+     <li><span class="icon solid fa-truck"><span class="label">Доставка по региону</span></span></li>
+    </ul>
+   </div>
+  </section>
 
-						<h5>Alternate</h5>
-						<div class="table-wrapper">
-							<table class="alt">
-								<thead>
-									<tr>
-										<th>Name</th>
-										<th>Description</th>
-										<th>Price</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Item One</td>
-										<td>Ante turpis integer aliquet porttitor.</td>
-										<td>29.99</td>
-									</tr>
-									<tr>
-										<td>Item Two</td>
-										<td>Vis ac commodo adipiscing arcu aliquet.</td>
-										<td>19.99</td>
-									</tr>
-									<tr>
-										<td>Item Three</td>
-										<td> Morbi faucibus arcu accumsan lorem.</td>
-										<td>29.99</td>
-									</tr>
-									<tr>
-										<td>Item Four</td>
-										<td>Vitae integer tempus condimentum.</td>
-										<td>19.99</td>
-									</tr>
-									<tr>
-										<td>Item Five</td>
-										<td>Ante turpis integer aliquet porttitor.</td>
-										<td>29.99</td>
-									</tr>
-								</tbody>
-								<tfoot>
-									<tr>
-										<td colspan="2"></td>
-										<td>100.00</td>
-									</tr>
-								</tfoot>
-							</table>
-						</div>
-					</section>
+  <!-- Контакты -->
+  <section id="contacts" class="wrapper">
+   <div class="inner">
+    <div class="contacts-bar">
+     <h3>📞 Свяжитесь с нами</h3>
+     <div class="contact-item">
+      <i>💬</i> Telegram: <a href="https://t.me/scathachsimp" target="_blank">@scathachsimp</a>
+     </div>
+     <div class="contact-item">
+      <i>📧</i> Email: <a href="mailto:lancercu612@gmail.com">lancercu612@gmail.com</a>
+     </div>
+     <p style="margin-top: 1rem; font-size: 0.9rem;">Ответим в течение 15 минут | Звонки по России бесплатно</p>
+    </div>
+   </div>
+  </section>
 
-					<section>
-						<h4>Buttons</h4>
-						<ul class="actions">
-							<li><a href="#" class="button primary">Primary</a></li>
-							<li><a href="#" class="button">Default</a></li>
-						</ul>
-						<ul class="actions">
-							<li><a href="#" class="button large">Large</a></li>
-							<li><a href="#" class="button">Default</a></li>
-							<li><a href="#" class="button small">Small</a></li>
-						</ul>
-						<ul class="actions fit">
-							<li><a href="#" class="button fit">Fit</a></li>
-							<li><a href="#" class="button primary fit">Fit</a></li>
-							<li><a href="#" class="button fit">Fit</a></li>
-						</ul>
-						<ul class="actions fit small">
-							<li><a href="#" class="button primary fit small">Fit + Small</a></li>
-							<li><a href="#" class="button fit small">Fit + Small</a></li>
-							<li><a href="#" class="button primary fit small">Fit + Small</a></li>
-						</ul>
-						<ul class="actions">
-							<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-							<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-						</ul>
-						<ul class="actions">
-							<li><span class="button primary disabled">Disabled</span></li>
-							<li><span class="button disabled">Disabled</span></li>
-						</ul>
-					</section>
+  <!-- Спецпредложение -->
+  <section id="three" class="wrapper style2 special">
+   <header class="major">
+    <h2>Скидка до 300 000 ₽ на первые 3 авто</h2>
+    <p>При заказе через сайт — бесплатное ТО на 2 года
 
-					<section>
-						<h4>Form</h4>
-						<form method="post" action="#">
-							<div class="row gtr-uniform">
-								<div class="col-6 col-12-xsmall">
-									<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
-								</div>
-								<div class="col-6 col-12-xsmall">
-									<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
-								</div>
-								<div class="col-12">
-									<select name="demo-category" id="demo-category">
-										<option value="">- Category -</option>
-										<option value="1">Manufacturing</option>
-										<option value="1">Shipping</option>
-										<option value="1">Administration</option>
-										<option value="1">Human Resources</option>
-									</select>
-								</div>
-								<div class="col-4 col-12-small">
-									<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-									<label for="demo-priority-low">Low</label>
-								</div>
-								<div class="col-4 col-12-small">
-									<input type="radio" id="demo-priority-normal" name="demo-priority">
-									<label for="demo-priority-normal">Normal</label>
-								</div>
-								<div class="col-4 col-12-small">
-									<input type="radio" id="demo-priority-high" name="demo-priority">
-									<label for="demo-priority-high">High</label>
-								</div>
-								<div class="col-6 col-12-small">
-									<input type="checkbox" id="demo-copy" name="demo-copy">
-									<label for="demo-copy">Email me a copy</label>
-								</div>
-								<div class="col-6 col-12-small">
-									<input type="checkbox" id="demo-human" name="demo-human" checked>
-									<label for="demo-human">Not a robot</label>
-								</div>
-								<div class="col-12">
-									<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-								</div>
-								<div class="col-12">
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Reset" /></li>
-									</ul>
-								</div>
-							</div>
-						</form>
-					</section>
+    и подарок: шины на выбор</p>
+   </header>
+   <ul class="actions special">
+    <li><a href="#" class="button primary icon solid fa-download">Заказать звонок</a></li>
+    <li><a href="#" class="button">Стать партнёром</a></li>
+   </ul>
+  </section>
 
-					<section>
-						<h4>Image</h4>
-						<h5>Fit</h5>
-						<div class="box alt">
-							<div class="row gtr-uniform">
-								<div class="col-12"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-							</div>
-						</div>
-						<h5>Left &amp; Right</h5>
-						<p><span class="image left"><img src="images/pic05.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-						<p><span class="image right"><img src="images/pic05.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-					</section>
+  <!-- Футер -->
+  <footer id="footer">
+   <ul class="icons">
+    <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+    <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+    <li><a href="#" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+   </ul>
+   <p class="copyright">&copy; DriveSpeed. Все авто проверены. Контакты: @scathachsimp | lancercu612@gmail.com
 
-				</div>
-			</section>
-		-->
+   Дизайн: <a href="http://html5up.net">HTML5 UP</a></p>
+  </footer>
 
-		<!-- Footer -->
-			<footer id="footer">
-				<ul class="icons">
-					<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-					<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-					<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-				</ul>
-				<p class="copyright">&copy; Untitled. Credits: <a href="http://html5up.net">HTML5 UP</a></p>
-			</footer>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrolly.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+ </body>
 </html>
